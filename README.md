@@ -127,7 +127,7 @@ Beberapa Contoh Gambar Yang Berkaitan Terkait Projek REST FULL API Perpustakaan
 <img src="./Img//classdiagram.png" />
 
 - **ERD (Entity Relationship Diagram)**
-<img src="./Img/Erd-manajemen-hotel.png />
+<img src="./Img//Erd-manajemen-hotel.png" />
 
 
 - **Relasi Table**
