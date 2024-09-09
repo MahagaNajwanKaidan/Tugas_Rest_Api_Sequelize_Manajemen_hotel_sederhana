@@ -7,7 +7,7 @@ import db from "./utils/connection.js"; // Import konfigurasi database
 import user from "./routes/UserRoutes.js"; // Import user routes
 import room from "./routes/RoomRoutes.js"; // Import room routes
 import booking from "./routes/BookingRoutes.js"; // Import booking routes
-const port = process.env.PORT;
+// const port = process.env.PORT;
 const app = express();
 app.use(express.json())
 
@@ -18,6 +18,6 @@ app.use('/room',room); // Menghubungkan room routes ke endpoint "/api/rooms"
 app.use('/booking',booking); // Menghubungkan booking routes ke endpoint "/api/bookings"
 
 // Start server
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
-});
+app.listen(process.env.PORT,()=>{
+    console.log('localhost berjalan')
+})

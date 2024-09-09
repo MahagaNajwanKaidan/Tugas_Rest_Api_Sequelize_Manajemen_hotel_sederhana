@@ -1,6 +1,7 @@
 import { DataTypes } from "sequelize";
 import db from "../utils/connection.js";
 
+
 const Room = db.define("Room", {
     id:{
         type: DataTypes.INTEGER,

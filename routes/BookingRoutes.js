@@ -3,10 +3,10 @@ import { getAllBookings, getBookingById, createBooking, updateBooking, deleteBoo
 
 const router = express.Router();
 
-router.get("/booking", getAllBookings);
-router.get("/booking/find:id", getBookingById);
-router.post("/booking/create", createBooking);
-router.put("/booking/update:id", updateBooking);
-router.delete("/booking/delete:id", deleteBooking);
+router.get("/", getAllBookings);
+router.get("/find:id", getBookingById);
+router.post("/create", createBooking);
+router.put("/update:id", updateBooking);
+router.delete("/delete:id", deleteBooking);
 
 export default router;
