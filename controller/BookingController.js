@@ -9,7 +9,7 @@ export const getAllBookings = async (req, res) => {
         const bookings = await Booking.findAll({
             include: [
                 { model: User,
-                     attributes: ["name", "email","numberphone"] },
+                     attributes: ["name", "email","phonenumber"] },
                 { model: Room,
                      attributes: ["room_number", "type", "harga"] }
             ]
@@ -25,7 +25,7 @@ export const getBookingById = async (req, res) => {
     try {
         const booking = await Booking.findByPk(req.params.id, {
             include: [
-                { model: User, attributes: ["name", "email","numberphone"] },
+                { model: User, attributes: ["name", "email","phonenumber"] },
                 { model: Room, attributes: ["room_number", "type", "harga"] }
             ]
         });

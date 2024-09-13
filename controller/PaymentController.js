@@ -1,15 +1,5 @@
 import Payment from "../models/PaymentModel.js"
 
-// Create a new payment
-export const createPayment = async (req, res) => {
-    try {
-        const { amount, paymentMethod, paymentDate, userId } = req.body;
-        const payment = await Payment.create({ amount, paymentMethod, paymentDate, userId });
-        res.status(201).json(payment);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-};
 
 // Get all payments
 export const getPayments = async (req, res) => {
@@ -21,6 +11,7 @@ export const getPayments = async (req, res) => {
     }
 };
 
+
 // Get a payment by ID
 export const getPaymentById = async (req, res) => {
     try {
@@ -31,6 +22,17 @@ export const getPaymentById = async (req, res) => {
         } else {
             res.status(404).json({ message: 'Payment not found' });
         }
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+};
+
+// Create a new payment
+export const createPayment = async (req, res) => {
+    try {
+        const { amount, paymentMethod, paymentDate, userId } = req.body;
+        const payment = await Payment.create({ amount, paymentMethod, paymentDate, userId });
+        res.status(201).json(payment);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
