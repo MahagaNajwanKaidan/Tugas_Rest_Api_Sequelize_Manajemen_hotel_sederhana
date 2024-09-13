@@ -1,12 +1,12 @@
 import express from 'express';
 import { createPayment, getPayments, getPaymentById, updatePayment, deletePayment } from "../controller/PaymentController.js"
 
-const router = express.Router();
+const Router = express.Router();
 
-router.post('/', createPayment); // Create a new payment
-router.get('/', getPayments);    // Get all payments
-router.get('/:id', getPaymentById); // Get a payment by ID
-router.put('/:id', updatePayment); // Update a payment by ID
-router.delete('/:id', deletePayment); // Delete a payment by ID
+Router.get("/", getPayments);    // Get all payments
+Router.get("/find/:id", getPaymentById); // Get a payment by ID
+Router.post("/create/", createPayment); // Create a new payment
+Router.put("/update/:id", updatePayment); // Update a payment by ID
+Router.delete("/delete/:id", deletePayment); // Delete a payment by ID
 
-export default router;
+export default Router;

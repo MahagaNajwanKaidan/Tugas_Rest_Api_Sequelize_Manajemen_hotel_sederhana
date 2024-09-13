@@ -4,9 +4,9 @@ import { getAllRooms, getRoomById, createRoom, updateRoom, deleteRoom } from "..
 const Router = express.Router();
 
 Router.get("/", getAllRooms);
-Router.get("/find:id", getRoomById);
+Router.get("/find/:id", getRoomById);
 Router.post("/create", createRoom);
-Router.put("/update:id", updateRoom);
-Router.delete("/delete:id", deleteRoom);
+Router.put("/update/:id", updateRoom);
+Router.delete("/delete/:id", deleteRoom);
 
 export default Router;

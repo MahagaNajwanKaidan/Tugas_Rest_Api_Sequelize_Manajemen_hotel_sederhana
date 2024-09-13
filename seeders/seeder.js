@@ -51,8 +51,8 @@ const createSeeder = async () => {
         price: "100.000",
         paymentMethod: "cash",
         paymentDate: new Date(),
-        bookingId: booking2.dataValues.id, // Assign bookingId dengan ID dari Booking
-        userId: user2.dataValues.id, // Assign userId
+        bookingId: booking.dataValues.id, // Assign bookingId dengan ID dari Booking
+        userId: user.dataValues.id, // Assign userId
     });
 
     const payment2 = await Payment.create({
@@ -138,13 +138,9 @@ const createSeeder = async () => {
                 model: Payment,
                 required: true,
             },
-            {
-                model: Reviews,
-                required: true,
-            },
         ],
     });
-    console.log("Payment created:", payment);
+    console.log("Payment created:", payment, reviews);
     return { findBookingByUser, findUserByBooking, findRoomByBooking };
 };
 

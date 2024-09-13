@@ -1,12 +1,12 @@
 import express from "express";
 import { getAllBookings, getBookingById, createBooking, updateBooking, deleteBooking } from "../controller/BookingController.js";
 
-const router = express.Router();
+const Router = express.Router();
 
-router.get("/", getAllBookings);
-router.get("/find:id", getBookingById);
-router.post("/create", createBooking);
-router.put("/update:id", updateBooking);
-router.delete("/delete:id", deleteBooking);
+Router.get("/", getAllBookings);
+Router.get("/find/:id", getBookingById);
+Router.post("/create", createBooking);
+Router.put("/update:id", updateBooking);
+Router.delete("/delete:id", deleteBooking);
 
-export default router;
+export default Router;

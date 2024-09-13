@@ -1,3 +1,4 @@
+// controllers/RoomController.js
 import Room from "../models/RoomModel.js";
 
 // Get All Rooms
@@ -37,8 +38,8 @@ export const updateRoom = async (req, res) => {
     try {
         const room = await Room.findByPk(req.params.id);
         if (!room) return res.status(404).json({ message: "Room not found" });
-        const {room_number,type,harga} = req.body;
-        await room.update({room_number,type,harga });
+        const { room_number, type, harga } = req.body;
+        await room.update({ room_number, type, harga });
         res.json(room);
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -56,3 +57,4 @@ export const deleteRoom = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 };
+

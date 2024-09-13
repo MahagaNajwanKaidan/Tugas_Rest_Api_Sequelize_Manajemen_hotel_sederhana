@@ -25,4 +25,3 @@ Reviews.belongsTo(Room, { foreignKey: 'roomId', onDelete: 'CASCADE', onUpdate: '
 // Room associations
 Room.hasOne(Booking, { foreignKey: 'roomId', onDelete: 'CASCADE', onUpdate: 'CASCADE' });
 Room.hasOne(Reviews, { foreignKey: 'roomId', onDelete: 'CASCADE', onUpdate: 'CASCADE' });
-

@@ -21,7 +21,7 @@ const Room = db.define('Room', {
         allowNull: false,
     },
 }, {
-    timestamps: true,
+    // timestamps: true,
     tableName: 'room',
 });
 

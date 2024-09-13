@@ -8,8 +8,10 @@ export const getAllBookings = async (req, res) => {
     try {
         const bookings = await Booking.findAll({
             include: [
-                { model: User, attributes: ["name", "email"] },
-                { model: Room, attributes: ["room_number", "type", "harga"] }
+                { model: User,
+                     attributes: ["name", "email","numberphone"] },
+                { model: Room,
+                     attributes: ["room_number", "type", "harga"] }
             ]
         });
         res.json(bookings);
@@ -23,7 +25,7 @@ export const getBookingById = async (req, res) => {
     try {
         const booking = await Booking.findByPk(req.params.id, {
             include: [
-                { model: User, attributes: ["name", "email"] },
+                { model: User, attributes: ["name", "email","numberphone"] },
                 { model: Room, attributes: ["room_number", "type", "harga"] }
             ]
         });
