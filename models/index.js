@@ -1,9 +1,10 @@
-import db from "../utils/connection.js"
-import User from "./UserModel.js"
-import Booking from "./BookingModel.js";
-import Room from "./RoomModel.js";
+import db from '../utils/connection.js'; // Import konfigurasi database
+import User from './UserModel.js'; // Import model User
+import Booking from './BookingModel.js'; // Import model Booking
+import Room from './RoomModel.js'; // Import model Room
+import Reviews from './ReviewsModel.js'; // Import model Reviews
+import Payment from './PaymentModel.js'; // Import model Payment
+import "./associations.js"; 
 
-// await User.sync();
-// await .sync();
-
-await db.sync({force:true});
+// Sinkronisasi database
+// await db.sync({ force: true }); // Hati-hati dengan opsi force: true, ini akan menghapus semua data

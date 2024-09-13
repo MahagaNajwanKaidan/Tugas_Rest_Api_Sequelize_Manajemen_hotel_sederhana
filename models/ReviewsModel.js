@@ -1,23 +1,22 @@
-// BookingModel.js
 import { DataTypes } from 'sequelize';
 import db from '../utils/connection.js';
+// import User from './UserModel.js';
+// import Room from './RoomModel.js';
 
-const Booking = db.define('Booking', {
-    type: {
-        type: DataTypes.STRING,
+const Reviews = db.define('Reviews', {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
         allowNull: false,
     },
-    checkindate: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    },
-    checkoutdate: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    },
-    total: {
+    rating: {
         type: DataTypes.INTEGER,
         allowNull: false,
+    },
+    comment: {
+        type: DataTypes.STRING,
+        allowNull: true,
     },
     userId: { // Foreign key to User
         type: DataTypes.INTEGER,
@@ -27,7 +26,12 @@ const Booking = db.define('Booking', {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
+}, {
+    timestamps: false,
+    tableName: 'reviews',
 });
 
-export default Booking;
+export default Reviews;
+
+
 

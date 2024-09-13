@@ -1,14 +1,12 @@
-import { DataTypes} from "sequelize";
-import db from "../utils/connection.js";
-import Booking from "./BookingModel.js"
+import { DataTypes } from 'sequelize';
+import db from '../utils/connection.js';
 
-const User = db.define("User",
-    {
-    id:{
+const User = db.define('User', {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull: true,
+        allowNull: false,
     },
     name: {
         type: DataTypes.STRING,
@@ -22,30 +20,10 @@ const User = db.define("User",
         type: DataTypes.STRING,
         allowNull: false,
     },
-},
-{
-    tableName:"user",
+}, {
+    tableName: 'user',
     freezeTableName: true,
     timestamps: true,
-    
-}
-);
-
-User.hasMany(Booking, {
-    foreignKey: 'userId',   
-    onDelete: 'CASCADE',    
-    onUpdate: 'CASCADE'
-  });
-  
-  Booking.belongsTo(User, {
-    foreignKey: 'userId',
-    onDelete: 'CASCADE',
-    onUpdate: 'CASCADE'
-  });
-
-
-
-
-
+});
 
 export default User;
