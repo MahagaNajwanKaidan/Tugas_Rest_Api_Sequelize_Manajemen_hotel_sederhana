@@ -126,7 +126,7 @@ Beberapa Contoh Gambar Yang Berkaitan Terkait Projek REST FULL API Perpustakaan
 
 
 - **Class Diagram**
-<img src="./Img//classdiagram.png" />
+<img src="./Img//classdiagram1.png" />
 
 
 
